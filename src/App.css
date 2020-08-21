@@ -1,0 +1,197 @@
+body {
+
+    background: linear-gradient(to right, #3e2b96, #74ebd5);
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    height: 100%;
+}
+
+.registration-container {
+    margin-top: 10%;
+}
+
+.registrationField__input {
+    outline: none;
+    border: none;
+    font-size: 15px;
+    width: 96%;
+}
+
+.registrationField__legend {
+    color: #b0b0b0;
+    width: auto;
+    font-size: 15px;
+}
+
+.fieldset {
+    border-color: #e3e3e3;
+    border-style: solid;
+    border-radius: 4px;
+}
+
+.registrationForm__title {
+    font-weight: bold;
+    text-align: center;
+    color: #333333;
+}
+
+.registrationForm__text {
+    font-weight: 400;
+    text-align: center;
+    color: #666666;
+    font-size: 15px;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 7%;
+}
+
+.registrationForm {
+    border-radius: 10px;
+    background-color: white;
+    width: 475px;
+    padding: 30px;
+    margin: 0 auto;
+}
+
+.registrationField {
+    margin-bottom: 17px;
+}
+
+.fname {
+    /*width: 47%;*/
+}
+
+.lname {
+    width: 47%;
+}
+
+.padding-field {
+    padding: 5px;
+}
+
+
+.login-container {
+    margin-top: 10%;
+}
+
+/* ---- HOME_PAGE ---- */
+
+
+.home-page-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.underlayer {
+    border-radius: 5px;
+    background-color: white;
+}
+
+.nav-container {
+    /*background-color: #e3f2fd;
+    height: 40px;*/
+}
+
+.menu-btn-color {
+    background-color: #007bff;
+}
+
+.profile-btn {
+    margin: 2%;
+}
+
+
+.main-page-body {
+
+}
+
+.table-container {
+    margin-top: 5%;
+    width: 80%;
+}
+
+.vertical-navigation {
+    position: absolute;
+    height: 100%;
+
+}
+
+.height_100{
+    height: 100%;
+}
+
+
+
+.filter-container {
+    margin: 1%;
+}
+
+.filtered-list .filter {
+    margin-bottom: 21px;
+}
+
+
+.pagination-container {
+
+}
+
+.copyright-container {
+
+}
+
+.scroll{
+    overflow-x: scroll;
+}
+
+.width_25{
+    width: 25%;
+}
+
+
+/* =================== */
+
+.containerWhite{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.editForm__title{
+    font-weight: bold;
+    text-align: center;
+    color: #333333;
+}
+
+fieldset {
+    margin-bottom: 10px;
+}
+
+input {
+    margin-left: 5px;
+    margin-bottom: 7px;
+}
+
+@media (max-width: 576px) {
+
+}
+
+@media (max-width: 991.98px) {
+
+}
+
+@media (max-width: 1024px) {
+
+}
