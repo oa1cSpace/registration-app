@@ -4,8 +4,20 @@ import HomePageContainer from "./Containers/HomePageContainer";
 import RegistrationPageContainer from "./Containers/RegistrationPageContainer";
 import LoginPageContainer from "./Containers/LoginPageContainer";
 import EditUsersRowContainer from "./Containers/EditUserRowContainer";
+import {connect} from "react-redux";
+import {addUsersData} from "./redux/actions/row";
+import {generateData} from "./helpers/users";
+
 
 class App extends React.Component {
+
+    constructor (props) {
+        super(props);
+        this.props.addUsersData(
+            generateData(100)
+        );
+    };
+
     render() {
         return (
             <Router>
@@ -21,4 +33,4 @@ class App extends React.Component {
     }
 }
 
-export default App;
+export default connect(null, { addUsersData })(App)

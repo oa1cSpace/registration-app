@@ -2,65 +2,48 @@ import React from 'react';
 import RowComponent from "./RowComponent";
 import PaginationComponent from "./PaginationComponent";
 import {connect} from "react-redux";
-import {updateFilteredRows, updatePage} from "../../redux/actions/row";
+import {
+    updateFilteredRows,
+    updatePage,
+    addTextInInput,
+    addUsersData
+} from "../../redux/actions/row";
 import {NavLink} from "react-router-dom";
-import {usersSearchSelector} from "../../Selectors/users_selector";
-import {userRowsReducer} from "../../redux/reducers/userRowsReducer";
-import {registrationReducer} from "../../redux/reducers/registrationReducer";
-import {loginReducer} from "../../redux/reducers/loginReducer";
+import {
+    currentPageSelector,
+    filterTextSelector,
+    getPagesCount,
+    usersPerPageSelector,
+    usersRawSelector,
+} from "../../selectors/userSelector";
+
 
 class TableComponent extends React.Component {
 
-    rowsPerPage = 10;
-
-    componentDidMount() {
-        this.props.updateFilteredRows(this.props.data);
-    };
-
-    filterColumn = (inputFilter, column) => {
-        return column
-            .toString()
-            .toLowerCase()
-            .includes(inputFilter.toLowerCase());
-    };
 
     setPage = (number) => {
         this.props.updatePage(number);
     };
 
-    getPagesCount = () => {
-        return Math.ceil(this.props.updatedData.length / this.rowsPerPage);
-    };
 
     searchFieldChanged = (event) => {
         const {value: searchPhrase} = event.target;
-        const rowsFiltered = this.props.data.filter((row) => {
-            return Object.values(row).filter((column) => this.filterColumn(searchPhrase, column)).length;
-        });
-
-        this.props.updateFilteredRows(rowsFiltered);
+        this.props.addTextInInput(searchPhrase);
     };
 
-    indexOfLastRow = () => {
-        return this.props.page * this.rowsPerPage;
-    };
-
-    indexOfFirstRow = () => {
-        return (this.props.page * this.rowsPerPage) - this.rowsPerPage;
-    };
 
     render() {
+        const {result} = this.props;
         return (
             <div>
-                <div className='d-flex justify-content-xl-between'>
+                <div className='d-flex justify-content-between align-middle'>
                     {/*  === FILTER_FIELD ===  */}
-                    <div className=''>
-                        <input className="form-control border mb-3"
-                               id="myInput"
-                               type="text"
-                               placeholder="Отфильтровать..."
-                               onKeyUp={this.searchFieldChanged}/>
-                    </div>
+                            <input className="form-control border mt-2"
+                                   id="myInput"
+                                   type="text"
+                                   placeholder="Отфильтровать..."
+                                   onKeyUp={this.searchFieldChanged}/>
+
 
                     {/*  === ADD_NEW_USER_BTN ===  */}
                     <div className='ml-3'>
@@ -79,36 +62,40 @@ class TableComponent extends React.Component {
                 </div>
 
                 {/*  === TABLE ===  */}
-                <table className="table table-hover">
-                    <thead className="thead-dark">
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Логин</th>
-                        <th scope="col">Имя</th>
-                        <th scope="col">Фамилия</th>
-                        <th scope="col">E-mail</th>
-                        <th scope="col"></th>
-                    </tr>
-                    </thead>
-                    {/*  === TABLE_BODY ===  */}
-                    <tbody>
-                    {
-                        this.props.updatedData ?
-                            this.props.updatedData
-                                .slice(this.indexOfFirstRow(), this.indexOfLastRow())
-                                .map((row, index) => <RowComponent key={index} row={row} index={index}/>) : []
-                    }
-                    </tbody>
-                </table>
+                <div>
+                    <table className="table table-hover">
+                        <thead className="thead-dark">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Логин</th>
+                            <th scope="col">Имя</th>
+                            <th scope="col">Фамилия</th>
+                            <th scope="col">E-mail</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        {/*  === TABLE_BODY ===  */}
+                        <tbody>
+                        {
+                            Object.values(result)
+                                .map((row, index) => <RowComponent key={index} row={row} index={index}/>)
+                        }
+                        </tbody>
+                    </table>
+                </div>
+
 
                 {/*  === PAGINATION ===  */}
-                <nav aria-label="Page Navigation">
-                    <PaginationComponent
-                        setPage={this.setPage}
-                        pagesCount={this.getPagesCount()}
-                        currentPage={this.props.page}
-                    />
-                </nav>
+                <div>
+                    <nav aria-label="Page Navigation">
+                        <PaginationComponent
+                            setPage={this.setPage}
+                            pagesCount={this.props.pageCount}
+                            currentPage={this.props.currentPage}
+                        />
+                    </nav>
+                </div>
+
             </div>
         );
     }
@@ -116,15 +103,19 @@ class TableComponent extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        ...state.rows,
-        rows: userRowsReducer,
-        registration: registrationReducer,
-        login: loginReducer,
+        users: usersRawSelector(state),
+        filter: filterTextSelector(state),
+        result: usersPerPageSelector(state),
+        pageCount: getPagesCount(state),
+        currentPage: currentPageSelector(state),
     };
 };
 
-
 export default connect(
-    // mapStateToProps, {updateFilteredRows, updatePage, generateData}
-    mapStateToProps, {updateFilteredRows, updatePage, usersSearchSelector}
+    mapStateToProps, {
+        updateFilteredRows,
+        updatePage,
+        addUsersData,
+        addTextInInput,
+    }
 )(TableComponent);

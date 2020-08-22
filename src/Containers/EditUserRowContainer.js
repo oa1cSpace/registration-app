@@ -1,7 +1,8 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {generateData, editUser} from "../redux/actions/row";
+import {addUsersData, editUser} from "../redux/actions/row";
 import {generateId} from "../Functions/RandomFunctions";
+import {usersRawSelector} from "../selectors/userSelector";
 
 class EditUserRowContainer extends React.Component {
 
@@ -17,8 +18,8 @@ class EditUserRowContainer extends React.Component {
     };
 
     componentDidMount() {
+        const fields = this.props.users;
         const {id} = this.props.match.params;
-        const fields = this.props.generateUserRow;
 
         if (id) {
             this.setState({row: fields[id], rowId: parseInt(id)});
@@ -36,7 +37,6 @@ class EditUserRowContainer extends React.Component {
         });
     };
 
-    //TODO: action for changing store
     handleSave() {
         const {row, rowId} = this.state;
 
@@ -44,7 +44,7 @@ class EditUserRowContainer extends React.Component {
             row.id = generateId();
         }
 
-        const oldRows = this.props.generateUserRow;
+        const oldRows = this.props.users;
         const newRows = rowId === null
             ? [row, ...oldRows] // when adding a new user
             : oldRows.map((oldRow, index) => index === rowId ? row : oldRow); // when editing existing user
@@ -190,7 +190,12 @@ class EditUserRowContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
-    return {...state.rows};
+    return{
+        users: usersRawSelector(state),
+    }
 };
 
-export default connect(mapStateToProps, {generateData, editUser})(EditUserRowContainer);
+export default connect(mapStateToProps, {
+    addUsersData,
+    editUser
+})(EditUserRowContainer);

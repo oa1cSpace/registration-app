@@ -1,10 +1,10 @@
 import {combineReducers} from "redux";
-import {userRowsReducer} from "./userRowsReducer";
+import {usersReducer} from "./usersReducer";
 import {loginReducer} from "./loginReducer";
 import {registrationReducer} from "./registrationReducer";
 
 export const rootReducers = combineReducers({
-    rows: userRowsReducer,
+    users: usersReducer,
     registration: registrationReducer,
     login: loginReducer,
 });
