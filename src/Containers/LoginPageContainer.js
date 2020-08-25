@@ -8,12 +8,12 @@ import {connect} from "react-redux";
 import {clearForm, setErrors, setField, setLoggedIn} from "../redux/actions/login";
 
 class LoginPageContainer extends React.Component {
-    fields = {
-        login: '',
-        password: '',
+     fields = {
+         login: '',
+         password: '',
     };
 
-    componentDidMount() {
+   componentDidMount() {
         this.props.clearForm(this.fields);
     }
 
@@ -21,7 +21,7 @@ class LoginPageContainer extends React.Component {
         this.props.setField(target)
     };
 
-    submitUserRegistrationForm = (e) => {
+     submitUserRegistrationForm = (e) => {
         e.preventDefault();
         const errors = this.validateForm();
         if (Object.keys(errors).length === 0) {
@@ -31,7 +31,7 @@ class LoginPageContainer extends React.Component {
         }
     };
 
-    validateForm = () => {
+    validateForm = () =>   {
         let fields = this.props.fields;
         let errors = {};
         /* eslint-disable no-unused-expressions */
@@ -56,7 +56,7 @@ class LoginPageContainer extends React.Component {
         e.preventDefault()
     };
 
-    render() {
+     render() {
         const {fields, errors} = this.props;
         return (
             <div className='login-container'>
@@ -111,7 +111,7 @@ class LoginPageContainer extends React.Component {
                 </div>
             </div>
         );
-    }
+     }
 }
 
 const mapStateToProps = state => ({...state.login});

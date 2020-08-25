@@ -1,7 +1,8 @@
 import React from 'react';
 
-class BtnBurger extends React.Component {
-  render() {
+// class BtnBurger extends React.Component {
+function BtnBurger() {
+  // render() {
     return (
       <div className="vertical-navigation sticky-top filter-container">
         <div className="height_100">
@@ -30,7 +31,7 @@ class BtnBurger extends React.Component {
         </div>
       </div>
     );
-  }
+  // }
 }
 
 export default BtnBurger;

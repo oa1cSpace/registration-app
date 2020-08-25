@@ -3,16 +3,17 @@ import {NavLink} from "react-router-dom";
 import {connect} from "react-redux";
 import {deleteUser, editUser} from "../../redux/actions/row";
 
-class RowComponent extends React.Component {
+// class RowComponent extends React.Component {
+function RowComponent(props) {
 
-    handleDelete = () => {
-        const rows = this.props.rows;
-        rows.splice(this.props.index, 1);
-        this.props.editUser(rows);
+     const handleDelete = () => {
+        const rows = props.rows;
+        rows.splice(props.index, 1);
+        props.editUser(rows);
     };
 
-    render() {
-        const {row, index} = this.props;
+    // render() {
+        const {row, index} = props;
 
         return (
             <tr>
@@ -46,7 +47,7 @@ class RowComponent extends React.Component {
 
                         {/*  === DELETE_BTN === */}
                         <div>
-                            <button onClick={this.handleDelete} className='btn rounded'>
+                            <button onClick={() => handleDelete()} className='btn rounded'>
                                 <span className="material-icons icon-edit">
                                     <svg width="1em"
                                          height="1em"
@@ -64,11 +65,10 @@ class RowComponent extends React.Component {
                         </div>
                     </div>
                 </td>
-
             </tr>
         );
-    };
-};
+    // };
+}
 
 
 const mapStateToProps = state => {

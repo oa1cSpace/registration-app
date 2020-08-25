@@ -1,14 +1,17 @@
 import React from 'react';
 
-class EmaileComponent extends React.Component {
-  render() {
-    const { text } = this.props;
-    const { name } = this.props;
-    const { type } = this.props;
-    const { placeholder } = this.props;
-    const { value } = this.props;
-    const { onChange } = this.props;
-    const { form } = this.props;
+// class EmaileComponent extends React.Component {
+function EmaileComponent(props) {
+  // render() {
+  //   const { text } = this.props;
+  //   const { name } = this.props;
+  //   const { type } = this.props;
+  //   const { placeholder } = this.props;
+  //   const { value } = this.props;
+  //   const { onChange } = this.props;
+  //   const { form } = this.props;
+
+    const {text,name,type,placeholder,value,onChange,form} = props;
 
     return (
       <fieldset className="fieldset border">
@@ -25,7 +28,7 @@ class EmaileComponent extends React.Component {
         />
       </fieldset>
     );
-  }
+  // }
 }
 
 export default EmaileComponent;

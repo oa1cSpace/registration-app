@@ -1,13 +1,16 @@
 import React from 'react';
 
-class BtnComponent extends React.Component {
-  render() {
-    const { value } = this.props;
-    const { className } = this.props;
-    const { type } = this.props;
-    const { text } = this.props;
-    const { onClick } = this.props;
-    const { onSubmit } = this.props;
+// class BtnComponent extends React.Component {
+function BtnComponent() {
+  // render() {
+  //   const { value } = this.props;
+  //   const { className } = this.props;
+  //   const { type } = this.props;
+  //   const { text } = this.props;
+  //   const { onClick } = this.props;
+  //   const { onSubmit } = this.props;
+
+  const {value, className, type, text, onClick, onSubmit} = props;
 
     return (
       <button
@@ -20,7 +23,7 @@ class BtnComponent extends React.Component {
         {text}
       </button>
     );
-  }
+  // }
 }
 
 export default BtnComponent;

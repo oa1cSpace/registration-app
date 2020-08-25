@@ -1,13 +1,17 @@
 import React from 'react';
 
-class PasswordComponent extends React.Component {
-  render() {
-    const { text } = this.props;
-    const { type } = this.props;
-    const { value } = this.props;
-    const { onChange } = this.props;
-    const { form } = this.props;
-    const { name } = this.props;
+// class PasswordComponent extends React.Component {
+function PasswordComponent(props) {
+  // render() {
+  //   const { text } = this.props;
+  //   const { type } = this.props;
+  //   const { value } = this.props;
+  //   const { onChange } = this.props;
+  //   const { form } = this.props;
+  //   const { name } = this.props;
+
+    const { text,type,value,onChange,form,name } = props;
+
 
     return (
       <fieldset className="fieldset border">
@@ -23,7 +27,7 @@ class PasswordComponent extends React.Component {
         />
       </fieldset>
     );
-  }
+  // }
 }
 
 export default PasswordComponent;

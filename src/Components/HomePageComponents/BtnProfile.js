@@ -1,8 +1,9 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-class BtnProfile extends React.Component {
-    render() {
+// class BtnProfile extends React.Component {
+function BtnProfile() {
+    // render() {
         return (
             <div className="btn-group d-flex justify-content-end filter-container">
                 <div>
@@ -36,7 +37,7 @@ class BtnProfile extends React.Component {
                 </div>
             </div>
         );
-    }
+    // }
 }
 
 export default BtnProfile;

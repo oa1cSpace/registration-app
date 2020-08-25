@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default class PaginationComponent extends React.Component {
-    render() {
-        const {
-            setPage, pagesCount, currentPage,
-        } = this.props;
+// export default class PaginationComponent extends React.Component {
+export default function PaginationComponent(props) {
+    // render() {
+        const {setPage, pagesCount, currentPage} = props;
         const pageNumbers = [...Array(pagesCount)].map((item, index) => index + 1);
+
         return (
             <ul className="pagination pg-blue justify-content-center ">
                 <li className={`page-item ${pageNumbers.includes(currentPage - 1) ? '' : 'd-none'}`}>
@@ -40,5 +40,5 @@ export default class PaginationComponent extends React.Component {
                 </li>
             </ul>
         );
-    };
+    // };
 }

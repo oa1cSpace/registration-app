@@ -19,6 +19,7 @@ class RegistrationPageContainer extends React.Component {
         email: '',
         login: '',
         password: '',
+        value: '',
     };
 
     componentDidMount() {

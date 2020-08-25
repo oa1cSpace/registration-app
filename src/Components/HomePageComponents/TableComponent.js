@@ -18,22 +18,23 @@ import {
 } from "../../selectors/userSelector";
 
 
-class TableComponent extends React.Component {
+// class TableComponent extends React.Component {
+function TableComponent(props) {
 
 
-    setPage = (number) => {
-        this.props.updatePage(number);
+    const setPage = (number) => {
+        props.updatePage(number);
     };
 
 
-    searchFieldChanged = (event) => {
+    const searchFieldChanged = (event) => {
         const {value: searchPhrase} = event.target;
-        this.props.addTextInInput(searchPhrase);
+        props.addTextInInput(searchPhrase);
     };
 
 
-    render() {
-        const {result} = this.props;
+    // render() {
+        const {result} = props;
         return (
             <div>
                 <div className='d-flex justify-content-between align-middle'>
@@ -42,7 +43,7 @@ class TableComponent extends React.Component {
                                    id="myInput"
                                    type="text"
                                    placeholder="Отфильтровать..."
-                                   onKeyUp={this.searchFieldChanged}/>
+                                   onKeyUp={() => searchFieldChanged()}/>
 
 
                     {/*  === ADD_NEW_USER_BTN ===  */}
@@ -89,16 +90,16 @@ class TableComponent extends React.Component {
                 <div>
                     <nav aria-label="Page Navigation">
                         <PaginationComponent
-                            setPage={this.setPage}
-                            pagesCount={this.props.pageCount}
-                            currentPage={this.props.currentPage}
+                            setPage={setPage}
+                            pagesCount={props.pageCount}
+                            currentPage={props.currentPage}
                         />
                     </nav>
                 </div>
 
             </div>
         );
-    }
+    // }
 }
 
 const mapStateToProps = state => {

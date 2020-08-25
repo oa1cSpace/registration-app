@@ -1,15 +1,18 @@
 import React from 'react';
 
-class NameComponent extends React.Component {
-  render() {
-    const { text } = this.props;
-    const { type } = this.props;
-    const { pattern } = this.props;
-    const { placeholder } = this.props;
-    const { onChange } = this.props;
-    const { value } = this.props;
-    const { name } = this.props;
-    const { form } = this.props;
+// class NameComponent extends React.Component {
+function NameComponent(props) {
+  // render() {
+  //   const { text } = this.props;
+  //   const { type } = this.props;
+  //   const { pattern } = this.props;
+  //   const { placeholder } = this.props;
+  //   const { onChange } = this.props;
+  //   const { value } = this.props;
+  //   const { name } = this.props;
+  //   const { form } = this.props;
+
+  const{text,type,pattern,placeholder,onChange,value,name,form} = props;
 
     return (
       <div className=" d-flex clm-2 justify-content-between ">
@@ -29,7 +32,7 @@ class NameComponent extends React.Component {
         </fieldset>
       </div>
     );
-  }
+  // }
 }
 
 export default NameComponent;

@@ -6,9 +6,9 @@ import {addUsersData, editUser} from "../redux/actions/row";
 import {connect} from "react-redux";
 import {usersRawSelector} from "../selectors/userSelector";
 
-
-class HomePageContainer extends React.Component {
-    render() {
+// class HomePageContainer extends React.Component {
+const HomePageContainer = () => {
+    // render() {
         return (
             <div className='containerWhite home-page-container scroll'>
                     <BtnBurger/>
@@ -18,7 +18,7 @@ class HomePageContainer extends React.Component {
                     </div>
             </div>
         );
-    };
+    // };
 }
 
 const mapStateToProps = state => {

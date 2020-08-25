@@ -17,6 +17,7 @@ class EditUserRowContainer extends React.Component {
         rowId: null,
     };
 
+
     componentDidMount() {
         const fields = this.props.users;
         const {id} = this.props.match.params;

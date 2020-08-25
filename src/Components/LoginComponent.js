@@ -1,8 +1,9 @@
 import React from 'react';
 
-class LoginComponent extends React.Component {
-  render() {
-    const {text,name,type,placeholder,value,onChange,form} = this.props;
+// class LoginComponent extends React.Component {
+function LoginComponent(props) {
+  // render() {
+    const {text,name,type,placeholder,value,onChange,form} = props;
 
     return (
       <fieldset className="fieldset border">
@@ -19,7 +20,7 @@ class LoginComponent extends React.Component {
         />
       </fieldset>
     );
-  }
+  // }
 }
 
 export default LoginComponent;
