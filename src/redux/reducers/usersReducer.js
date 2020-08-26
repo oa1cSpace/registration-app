@@ -11,13 +11,16 @@ import {
 const rows = (state = [], action) => {
     switch (action.type) {
         case GENERATE_DATA:
-            return [...action.data || []];
         case EDIT_USER_ROW:
-            return [...action.data || []];
+            return [...action.data || []].map((item, index) => {
+                item.idx = index;
+                return item;
+            });
         default:
             return state;
     }
 };
+
 
 const page = (state = 1, action) => {
     switch (action.type) {
@@ -30,8 +33,7 @@ const page = (state = 1, action) => {
     }
 };
 
-
-const filterText = (state = '', action) => {
+const filterText = (state = '', action)=>{
     switch (action.type) {
         case GET_TEXT:
             return action.text;
@@ -44,5 +46,6 @@ const filterText = (state = '', action) => {
 export const usersReducer = combineReducers({
     rows,
     page,
-    filterText,
+    filterText
 });
+

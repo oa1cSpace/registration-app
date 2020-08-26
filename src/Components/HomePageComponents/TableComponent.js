@@ -19,22 +19,23 @@ import {
 
 
 // class TableComponent extends React.Component {
-function TableComponent(props) {
+// function TableComponent(props) {
+const TableComponent = ({updatePage, addTextInInput, result, pageCount, currentPage }) => {
 
 
     const setPage = (number) => {
-        props.updatePage(number);
+        updatePage(number);
     };
 
 
     const searchFieldChanged = (event) => {
         const {value: searchPhrase} = event.target;
-        props.addTextInInput(searchPhrase);
+        addTextInInput(searchPhrase);
     };
 
 
     // render() {
-        const {result} = props;
+
         return (
             <div>
                 <div className='d-flex justify-content-between align-middle'>
@@ -43,7 +44,7 @@ function TableComponent(props) {
                                    id="myInput"
                                    type="text"
                                    placeholder="Отфильтровать..."
-                                   onKeyUp={() => searchFieldChanged()}/>
+                                   onKeyUp={searchFieldChanged}/>
 
 
                     {/*  === ADD_NEW_USER_BTN ===  */}
@@ -79,7 +80,7 @@ function TableComponent(props) {
                         <tbody>
                         {
                             Object.values(result)
-                                .map((row, index) => <RowComponent key={index} row={row} index={index}/>)
+                                .map((row, index) => <RowComponent key={index} row={row} index={row.idx}/>)
                         }
                         </tbody>
                     </table>
@@ -91,8 +92,8 @@ function TableComponent(props) {
                     <nav aria-label="Page Navigation">
                         <PaginationComponent
                             setPage={setPage}
-                            pagesCount={props.pageCount}
-                            currentPage={props.currentPage}
+                            pagesCount={pageCount}
+                            currentPage={currentPage}
                         />
                     </nav>
                 </div>

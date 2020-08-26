@@ -14,7 +14,7 @@ body {
     outline: none;
     border: none;
     font-size: 15px;
-    width: 96%;
+    width: 98%;
 }
 
 .registrationField__legend {
@@ -27,6 +27,7 @@ body {
     border-color: #e3e3e3;
     border-style: solid;
     border-radius: 4px;
+
 }
 
 .registrationForm__title {
@@ -153,8 +154,8 @@ body {
     overflow-x: scroll;
 }
 
-.width_25{
-    width: 25%;
+.width_15{
+    width: 15%;
 }
 
 
