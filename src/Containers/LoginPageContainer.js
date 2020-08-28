@@ -3,7 +3,7 @@
 // import LoginComponent from "../Components/LoginComponent";
 // import PasswordComponent from "../Components/PasswordComponent";
 // import BtnBackHome from "../Components/BtnBackHome";
-// import BtnComponents from "../Components/BtnComponents";
+// import BtnComponent from "../Components/BtnComponent";
 // import {connect} from "react-redux";
 // import {clearForm, setErrors, setField, setLoggedIn} from "../redux/actions/login";
 //
@@ -90,7 +90,7 @@
 //                     <div className="text-danger  errorMsg">{errors.password}</div>
 //
 //                     <div className='d-flex justify-content-between mt-3'>
-//                         <BtnComponents
+//                         <BtnComponent
 //                             text="Сброс"
 //                             className='btn btn-outline-danger btn_active'
 //                             value='reset'
@@ -98,7 +98,7 @@
 //                         />
 //
 //                         <Link to='home'>
-//                             <BtnComponents
+//                             <BtnComponent
 //                                 text="Вход"
 //                                 className='btn btn-outline-success btn_active'
 //                                 onSubmit={this.submitUserRegistrationForm}
@@ -136,7 +136,7 @@
 // import LoginComponent from "../Components/LoginComponent";
 // import PasswordComponent from "../Components/PasswordComponent";
 // import BtnBackHome from "../Components/BtnBackHome";
-// import BtnComponents from "../Components/BtnComponents";
+// import BtnComponent from "../Components/BtnComponent";
 // import {connect} from "react-redux";
 // import {clearForm, setErrors, setField, setLoggedIn} from "../redux/actions/login";
 //
@@ -244,7 +244,7 @@
 //                     <div className="text-danger">{this.getError("password")}</div>
 //
 //                     <div className='d-flex justify-content-between mt-3'>
-//                         <BtnComponents
+//                         <BtnComponent
 //                             text="Сброс"
 //                             className='btn btn-outline-danger btn_active'
 //                             value='reset'
@@ -252,7 +252,7 @@
 //                         />
 //
 //                         <Link to='home'>
-//                             <BtnComponents
+//                             <BtnComponent
 //                                 text="Вход"
 //                                 className='btn btn-outline-success btn_active'
 //                                 onSubmit={this.submitRegistrationForm}
@@ -297,7 +297,7 @@ import {Link} from "react-router-dom";
 import LoginComponent from "../Components/LoginComponent";
 import PasswordComponent from "../Components/PasswordComponent";
 import BtnBackHome from "../Components/BtnBackHome";
-import BtnComponents from "../Components/BtnComponents";
+import BtnComponent from "../Components/BtnComponent";
 import {connect} from "react-redux";
 import {clearForm, setErrors, setField, setLoggedIn} from "../redux/actions/login";
 
@@ -377,7 +377,7 @@ class LoginPageContainer extends React.Component {
                     />
                     <div className="text-danger  errorMsg">{errors.password}</div>
                     <div className='d-flex justify-content-between mt-3'>
-                        <BtnComponents
+                        <BtnComponent
                             text="Сброс"
                             className='btn btn-outline-danger btn_active'
                             value='reset'
@@ -385,7 +385,7 @@ class LoginPageContainer extends React.Component {
                         />
 
                         <Link to='home'>
-                            <BtnComponents
+                            <BtnComponent
                                 text="Вход"
                                 className='btn btn-outline-success btn_active'
                                 onSubmit={this.submitUserRegistrationForm}

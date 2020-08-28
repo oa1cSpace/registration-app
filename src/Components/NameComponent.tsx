@@ -1,6 +1,8 @@
 import * as React from 'react';
+import {NameComponentInterface} from "../Interfaces/NameComponentInterface";
+import {ReactElement} from "react";
 
-const NameComponent:React.FunctionComponent <any> = (props) => {
+const NameComponent = (props: NameComponentInterface): ReactElement => {
     const {text, type, pattern, placeholder, onChange, value, name, form} = props;
 
     return (

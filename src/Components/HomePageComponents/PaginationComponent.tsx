@@ -1,7 +1,15 @@
 import * as React from 'react';
+import {ReactElement} from "react";
 
-const PaginationComponent: React.FunctionComponent <any> = ({setPage, pagesCount, currentPage}) => {
-    // const {setPage, pagesCount, currentPage} = props;
+interface PaginationComponentInterface {
+    // setPage: (int: number) => string,
+    setPage: Function,
+    pagesCount: number,
+    currentPage: number
+}
+
+export const PaginationComponent = (props: PaginationComponentInterface): ReactElement => {
+    const {setPage, pagesCount, currentPage} = props;
     const pageNumbers: Array<number> = [...Array(pagesCount)].map((item, index: number) => index + 1);
 
     return (
@@ -41,4 +49,22 @@ const PaginationComponent: React.FunctionComponent <any> = ({setPage, pagesCount
     // };
 }
 
-export default PaginationComponent;
+// -------
+
+// export const t1 = '1';
+// export const t2 = '1';
+//
+// import  {t1} from  = {t1: '1', t2: '2'}
+
+// -----
+// export const t1 = '1';
+// export const t2 = '1';
+//
+// {t1: '1', t2: '2'}
+//
+// export default t3 = '3';
+
+// будет в импорте ==> 3
+
+
+// ----

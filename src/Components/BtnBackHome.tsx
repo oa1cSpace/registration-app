@@ -2,7 +2,6 @@ import * as React from 'react';
 import {ReactElement} from "react";
 
 const BtnBackHome = (props : {type: 'button' | 'submit' | 'reset' | undefined, text: string}): ReactElement => {
-
     const {text, type} = props;
 
     return (

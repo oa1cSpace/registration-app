@@ -2,8 +2,9 @@ import * as React from 'react';
 import {slide as Menu} from 'react-burger-menu';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Dropdown} from 'react-bootstrap';
+import {ReactElement} from "react";
 
-const BurgerMenuComponent:React.FunctionComponent <any> = () => {
+export const BurgerMenuComponent = (): ReactElement => {
     const showSettings = (event: React.MouseEvent) => {
         event.preventDefault();
     }
@@ -65,4 +66,3 @@ const BurgerMenuComponent:React.FunctionComponent <any> = () => {
     );
 }
 
-export default BurgerMenuComponent;

@@ -1,7 +1,9 @@
 import * as React from 'react';
+import {ReactElement} from "react";
+import {PasswordComponentInterface} from "../Interfaces/PasswordComponentInterface";
 
-const PasswordComponent:React.FunctionComponent <any> = ({text, type, value, onChange, form, name}) => {
-    // const {text, type, value, onChange, form, name} = props;
+const PasswordComponent = (props: PasswordComponentInterface): ReactElement => {
+    const {text, type, value, onChange, form, name} = props;
 
     return (
         <fieldset className="fieldset border">

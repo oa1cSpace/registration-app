@@ -1,6 +1,6 @@
 import * as React from 'react';
 import RowComponent from "./RowComponent";
-import PaginationComponent from "./PaginationComponent";
+import {PaginationComponent} from "./PaginationComponent";
 import {connect} from "react-redux";
 import {
     updateFilteredRows,

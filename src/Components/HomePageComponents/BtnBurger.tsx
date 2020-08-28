@@ -1,6 +1,7 @@
 import * as React from 'react';
+import {ReactElement} from "react";
 
-const BtnBurger: React.FunctionComponent <any> = () => {
+const BtnBurger = ():ReactElement => {
 
     return (
         <div className="vertical-navigation sticky-top filter-container">

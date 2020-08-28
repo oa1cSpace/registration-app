@@ -1,8 +1,10 @@
 import * as React from 'react';
 import PComponent from './PComponent';
+import {HeaderComponentInterface} from "../Interfaces/HeaderComponentInterface";
+import {ReactElement} from "react";
 
-const HeaderComponent:React.FunctionComponent <any> = ({title, className}) => {
-    // const {title, className} = props;
+const HeaderComponent= (props: HeaderComponentInterface): ReactElement => {
+    const {title, className} = props;
 
     return (
         <div>

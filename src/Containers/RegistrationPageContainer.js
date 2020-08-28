@@ -4,7 +4,7 @@
 // import PasswordComponent from "../Components/PasswordComponent";
 // import LoginComponent from "../Components/LoginComponent";
 // import NameComponent from "../Components/NameComponent";
-// import BtnComponents from "../Components/BtnComponents";
+// import BtnComponent from "../Components/BtnComponent";
 // import {Link} from "react-router-dom";
 // import BtnLogin from "../Components/BtnLogin";
 // import {connect} from "react-redux";
@@ -172,13 +172,13 @@
 //                     />
 //                     <div className="text-danger  errorMsg">{errors.password}</div>
 //                     <div className='d-flex justify-content-between mt-3'>
-//                         <BtnComponents
+//                         <BtnComponent
 //                             className='btn btn-outline-danger'
 //                             text="Сброс"
 //                             onClick={this.resetForm}
 //
 //                         />
-//                         <BtnComponents
+//                         <BtnComponent
 //                             className='btn btn-outline-success btn_active'
 //                             text="Регистрация"
 //                             onSubmit={this.submitUserRegistrationForm}
@@ -217,7 +217,7 @@ import EmaileComponent from "../Components/EmaileComponent";
 import PasswordComponent from "../Components/PasswordComponent";
 import LoginComponent from "../Components/LoginComponent";
 import NameComponent from "../Components/NameComponent";
-import BtnComponents from "../Components/BtnComponents";
+import BtnComponent from "../Components/BtnComponent";
 import {Link} from "react-router-dom";
 import BtnLogin from "../Components/BtnLogin";
 import {connect} from "react-redux";
@@ -364,13 +364,13 @@ class RegistrationPageContainer extends React.Component {
                     />
                     <div className="text-danger  errorMsg">{errors.password}</div>
                     <div className='d-flex justify-content-between mt-3'>
-                        <BtnComponents
+                        <BtnComponent
                             className='btn btn-outline-danger'
                             text="Сброс"
                             onClick={this.resetForm}
 
                         />
-                        <BtnComponents
+                        <BtnComponent
                             className='btn btn-outline-success btn_active'
                             text="Регистрация"
                             onSubmit={this.submitUserRegistrationForm}

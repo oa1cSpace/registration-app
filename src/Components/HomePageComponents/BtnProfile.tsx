@@ -1,7 +1,8 @@
 import * as React from 'react';
 import {Link} from "react-router-dom";
+import {ReactElement} from "react";
 
-const BtnProfile:React.FunctionComponent = () => {
+export const BtnProfile = (): ReactElement => {
 
         return (
             <div className="btn-group d-flex justify-content-end filter-container">
@@ -36,7 +37,5 @@ const BtnProfile:React.FunctionComponent = () => {
                 </div>
             </div>
         );
-    // }
 }
 
-export default BtnProfile;

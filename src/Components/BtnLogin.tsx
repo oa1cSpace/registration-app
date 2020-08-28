@@ -1,6 +1,8 @@
 import * as React from 'react';
+import {ReactElement} from "react";
+import {BtnLoginInterface} from "../Interfaces/BtnLoginInterface";
 
-const BtnLogin:React.FunctionComponent <any> = (props) => {
+const BtnLogin = (props: BtnLoginInterface): ReactElement => {
     const {text,type} = props;
 
     return (
