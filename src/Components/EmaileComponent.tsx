@@ -1,15 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 
-// class EmaileComponent extends React.Component {
-function EmaileComponent(props) {
-  // render() {
-  //   const { text } = this.props;
-  //   const { name } = this.props;
-  //   const { type } = this.props;
-  //   const { placeholder } = this.props;
-  //   const { value } = this.props;
-  //   const { onChange } = this.props;
-  //   const { form } = this.props;
+const EmaileComponent:React.FunctionComponent <any> = (props) => {
 
     const {text,name,type,placeholder,value,onChange,form} = props;
 
@@ -18,7 +9,7 @@ function EmaileComponent(props) {
         <legend className="registrationField__legend ml-2">{text}</legend>
         <input
           name={name}
-          text={text}
+          // text={text}
           className="registrationField__input"
           placeholder={placeholder}
           value={value}
@@ -28,7 +19,6 @@ function EmaileComponent(props) {
         />
       </fieldset>
     );
-  // }
 }
 
 export default EmaileComponent;

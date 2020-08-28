@@ -1,9 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import {Link} from "react-router-dom";
 
-// class BtnProfile extends React.Component {
-function BtnProfile() {
-    // render() {
+const BtnProfile:React.FunctionComponent = () => {
+
         return (
             <div className="btn-group d-flex justify-content-end filter-container">
                 <div>
@@ -30,7 +29,7 @@ function BtnProfile() {
                         <div className="dropdown-divider"/>
 
                         <Link to='/login'>
-                            <button className="dropdown-item" href="#">Выход</button>
+                            <button className="dropdown-item">Выход</button>
                         </Link>
 
                     </div>

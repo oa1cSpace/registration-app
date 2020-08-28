@@ -1,3 +1,15 @@
 {
-    "extends": "airbnb"
+//  "extends": "airbnb"
+  /* "extends": ["plugin:@typescript-eslint/recommended"]*/
+"extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "rules": {
+    "no-unused-expressions": "off"
+  }
+  /*"parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "@typescript-eslint/rule-name": "error"
+  }*/
 }

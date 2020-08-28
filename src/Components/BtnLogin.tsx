@@ -1,8 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 
-// class BtnLogin extends React.Component {
-function BtnLogin(props) {
-  // render() {
+const BtnLogin:React.FunctionComponent <any> = (props) => {
     const {text,type} = props;
 
     return (
@@ -10,7 +8,6 @@ function BtnLogin(props) {
         <button className="btn text-white" type={type}>{text}</button>
       </div>
     );
-  // }
 }
 
 export default BtnLogin;

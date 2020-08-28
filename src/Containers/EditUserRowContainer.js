@@ -50,8 +50,8 @@ const EditUserRowContainer = ({users, match, editUser}) => {
                 : oldRows.map((oldRow, index) => index === rowId ? row : oldRow); // when editing existing user
             editUser(newRows);
             window.history.back();
-        }  else {
-            setErrors( errors );
+        } else {
+            setErrors(errors);
         }
     };
 
@@ -62,7 +62,7 @@ const EditUserRowContainer = ({users, match, editUser}) => {
         const editNames = new RegExp("^[A-Za-zА-Яа-яЁё]{2,60}");
         const editEmail = new RegExp('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')
 
-        if (!editNames.exec(rows.name1)){
+        if (!editNames.exec(rows.name1)) {
             errors.name1 = "Введите правильный логин.";
         }
 
@@ -89,7 +89,7 @@ const EditUserRowContainer = ({users, match, editUser}) => {
 
             {/*  ===> EDIT_FORM <===  */}
             <form className="container-sm mt-5 shadow p-3 mb-5 bg-white rounded width_15"
-                  /*onSubmit={submitEdit}*/>
+                /*onSubmit={submitEdit}*/>
                 {/*  <table className="table table-hover" id='table-edit'>
                         <thead className="thead-dark">
                             <tr>
@@ -122,7 +122,7 @@ const EditUserRowContainer = ({users, match, editUser}) => {
                     <td>
                         <input
                             className="registrationField__input"
-                            value = {row.id}
+                            value={row.id}
                         />
                     </td>
                 </fieldset>

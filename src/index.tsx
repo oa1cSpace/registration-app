@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -7,8 +7,9 @@ import {Provider} from "react-redux";
 import {rootReducers} from "./redux/reducers/rootReducers";
 import {render} from "react-dom";
 
-const store = createStore(rootReducers,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+const store = createStore(
+    rootReducers,
+    (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 const app = (

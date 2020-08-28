@@ -1,15 +1,13 @@
-import React from 'react';
+import * as React from 'react';
 import {slide as Menu} from 'react-burger-menu';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Dropdown} from 'react-bootstrap';
 
-// class BurgerMenuComponent extends React.Component {
-function BurgerMenuComponent() {
-    const showSettings = (event) => {
+const BurgerMenuComponent:React.FunctionComponent <any> = () => {
+    const showSettings = (event: React.MouseEvent) => {
         event.preventDefault();
     }
 
-    // render() {
     return (
         <div className="d-flex justify-content-between">
             <Menu outerContainerId="outer-container">
@@ -40,7 +38,8 @@ function BurgerMenuComponent() {
                     {' '}
                     Товары
                 </a>
-                <a onClick={showSettings()} className="menu-item" href="/home">
+                {/*<a onClick={showSettings()} className="menu-item" href="/home">*/}
+                <a onClick={showSettings} className="menu-item" href="/home">
             <span
                 className="material-icons icon-bar md-18"
             >
@@ -64,7 +63,6 @@ function BurgerMenuComponent() {
             </main>
         </div>
     );
-    // }
 }
 
 export default BurgerMenuComponent;
