@@ -1,16 +1,10 @@
 import * as React from 'react';
 import {ReactElement} from "react";
-
-interface PaginationComponentInterface {
-    // setPage: (int: number) => string,
-    setPage: Function,
-    pagesCount: number,
-    currentPage: number
-}
+import {PaginationComponentInterface} from "../../Interfaces/PaginationComponentInterface";
 
 export const PaginationComponent = (props: PaginationComponentInterface): ReactElement => {
     const {setPage, pagesCount, currentPage} = props;
-    const pageNumbers: Array<number> = [...Array(pagesCount)].map((item, index: number) => index + 1);
+    const pageNumbers: Array<number> = [...Array(pagesCount)].map((item: number, index: number) => index + 1);
 
     return (
         <ul className="pagination pg-blue justify-content-center ">

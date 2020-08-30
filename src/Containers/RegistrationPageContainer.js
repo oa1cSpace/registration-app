@@ -1,4 +1,4 @@
-// import * as React from 'react';
+// import React from 'react';
 // import HeaderComponent from "../Components/HeaderComponent";
 // import EmaileComponent from "../Components/EmaileComponent";
 // import PasswordComponent from "../Components/PasswordComponent";
@@ -45,54 +45,28 @@
 //     public validateForm = () => {
 //         let fields = this.props.fields;
 //         let errors: { [key: string]: string } = {};
-//         /* eslint-disable no-unused-expressions */
 //
 //         if (!fields["username"] || !fields["username"].match('^[A-Za-zА-Яа-яЁё]{2,60}')) {
 //             errors["username"] = "Не верно введено имя";
 //         }
 //
-//         // !fields["username"]
-//         //     ? errors["username"] = "Пожалуйста, введите имя."
-//         //     : !fields["username"].match('^[A-Za-zА-Яа-яЁё]{2,60}')
-//         //     ? errors["username"] = "Имя может содержать только буквы."
-//         //     : null;
 //
 //         if (!fields["surname"] || !fields["surname"].match('^[A-Za-zА-Яа-яЁё]{2,60}')) {
 //             errors["surname"] = "Не верно введена фамилия";
 //         }
-//         // !fields["surname"]
-//         //     ? errors["surname"] = "Пожалуйста, введите фамилию."
-//         //     : !fields["surname"].match('^[A-Za-zА-Яа-яЁё]{2,60}')
-//         //     ? errors["surname"] = "Фамилия может содержать только буквы."
-//         //     : null;
 //
 //         if (!fields["email"] || !fields["email"].match('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')) {
 //             errors["email"] = "Не верно введён e-mail";
 //         }
-//         // !fields["email"]
-//         //     ? errors["email"] = "Пожалуйста, введите e-mail."
-//         //     : !fields["email"].match('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')
-//         //     ? errors["email"] = "Напишите правильный e-mail."
-//         //     : null;
 //
 //
 //         if (!fields["login"] || !fields["login"].match('^[A-Za-zА-Яа-яЁё]{2,60}')) {
 //             errors["login"] = "Не верно введён логин";
 //         }
-//         // !fields["login"]
-//         //     ? errors["login"] = "Пожалуйста, введите логин."
-//         //     : !fields["login"].match('^[A-Za-zА-Яа-яЁё0-9]{4,60}')
-//         //     ? errors["login"] = "Напишите правильный логин."
-//         //     : null;
 //
 //         if (!fields["password"] || !fields["password"].match('^[A-Za-zА-Яа-яЁё]{2,60}')) {
 //             errors["password"] = "Не верно введён пароль";
 //         }
-//         // !fields["password"]
-//         //     ? errors["password"] = "Пожалуйста, введите пароль."
-//         //     : !fields["password"].match('^[A-Za-zА-Яа-яЁё]{4,60}')
-//         //     ? errors["password"] = "Пароль слишком легкий."
-//         //     : null;
 //
 //         return errors;
 //     };
@@ -181,7 +155,7 @@
 //                         <BtnComponent
 //                             className='btn btn-outline-success btn_active'
 //                             text="Регистрация"
-//                             onSubmit={this.submitUserRegistrationForm}
+//                             onClick={this.submitUserRegistrationForm}
 //                         />
 //                     </div>
 //                 </form>
@@ -207,7 +181,6 @@
 //     setLoggedIn,
 //     clearForm,
 // })(RegistrationPageContainer);
-
 
 
 import React from 'react';
@@ -391,7 +364,7 @@ class RegistrationPageContainer extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({...state.registration});
+const mapStateToProps = (state) => ({...state.registration});
 
 export default connect(mapStateToProps, {
     setErrors,

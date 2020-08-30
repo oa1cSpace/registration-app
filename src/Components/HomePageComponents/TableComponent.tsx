@@ -16,14 +16,20 @@ import {
     usersPerPageSelector,
     usersRawSelector,
 } from "../../selectors/userSelector";
+import {ReactElement} from "react";
+import {TableComponentInterface} from "../../Interfaces/TableComponentInterface";
 
-const TableComponent: React.FunctionComponent <any> = ({updatePage, addTextInInput, result, pageCount, currentPage}) => {
+
+const TableComponent = (props: TableComponentInterface): ReactElement => {
+
+    const {updatePage, addTextInInput, result, pageCount, currentPage} = props;
 
     const setPage = (number: number): void => {
         updatePage(number);
     };
 
-    const searchFieldChanged = (event: any): void => {
+    // @ts-ignore
+    const searchFieldChanged = (event: KeyboardEvent<HTMLInputElement>): void => {
         const {value: searchPhrase} = event.target;
         addTextInInput(searchPhrase);
     };
@@ -71,7 +77,7 @@ const TableComponent: React.FunctionComponent <any> = ({updatePage, addTextInInp
                     <tbody>
                     {
                         Object.values(result)
-                            .map((row:any, index:number) => <RowComponent  row={row} index={row.idx} key={index} />)
+                            .map((row: any, index: number) => <RowComponent row={row} index={row.idx} key={index}/>)
                     }
                     </tbody>
                 </table>

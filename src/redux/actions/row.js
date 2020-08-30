@@ -40,9 +40,10 @@ export const addTextInInput = (text) => {
     }
 };
 
+/*
 export const deleteUser = (data) => {
     return {
         type: DELETE_USER_ROW,
         data
     }
-};
+};*/

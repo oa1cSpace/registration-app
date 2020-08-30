@@ -32,7 +32,6 @@ export const BtnProfile = (): ReactElement => {
                         <Link to='/login'>
                             <button className="dropdown-item">Выход</button>
                         </Link>
-
                     </div>
                 </div>
             </div>

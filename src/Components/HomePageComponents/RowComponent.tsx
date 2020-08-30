@@ -3,11 +3,14 @@ import {NavLink} from "react-router-dom";
 import {connect} from "react-redux";
 import {editUser} from "../../redux/actions/row";
 import {usersRawSelector} from "../../selectors/userSelector";
+import { ReactElement} from "react";
+import {RowComponentInterface} from "../../Interfaces/RowComponentInterface";
 
-const RowComponent: React.FunctionComponent <any> = ({row, index, editUser, users}) => {
+const RowComponent = (props: RowComponentInterface): ReactElement => {
+    const {row, index, editUser, users} = props;
 
     const handleDelete = () => {
-        const rows: string[] = [...users];
+        const rows: Array<string> [] = [...users];
         rows.splice(index, 1);
         editUser(rows);
     };
@@ -66,7 +69,7 @@ const RowComponent: React.FunctionComponent <any> = ({row, index, editUser, user
     );
 }
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: string) => {
     return {
         users: usersRawSelector(state),
     };

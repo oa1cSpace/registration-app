@@ -1,7 +1,7 @@
 import * as React from 'react';
 import TableComponent from "../Components/HomePageComponents/TableComponent";
 import {BtnProfile} from "../Components/HomePageComponents/BtnProfile";
-import BtnBurger from "../Components/HomePageComponents/BtnBurger";
+import {BtnBurger} from "../Components/HomePageComponents/BtnBurger";
 import {addUsersData, editUser} from "../redux/actions/row";
 import {connect} from "react-redux";
 import {usersRawSelector} from "../selectors/userSelector";

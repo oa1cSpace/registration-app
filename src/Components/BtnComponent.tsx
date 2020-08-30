@@ -1,7 +1,8 @@
 import * as React from 'react';
 import {BtnComponentInterface} from "../Interfaces/BtnComponentInterface";
+import {ReactElement} from "react";
 
-const BtnComponent = (props: BtnComponentInterface) => {
+const BtnComponent = (props: BtnComponentInterface): ReactElement => {
     const {type, text, onClick, className, value} = props;
 
     return (

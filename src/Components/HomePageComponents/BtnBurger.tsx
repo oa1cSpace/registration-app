@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {ReactElement} from "react";
 
-const BtnBurger = ():ReactElement => {
+export const BtnBurger = (): ReactElement => {
 
     return (
         <div className="vertical-navigation sticky-top filter-container">
@@ -33,4 +33,3 @@ const BtnBurger = ():ReactElement => {
     );
 }
 
-export default BtnBurger;

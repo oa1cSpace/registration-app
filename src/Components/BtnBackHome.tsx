@@ -1,7 +1,8 @@
 import * as React from 'react';
 import {ReactElement} from "react";
+import {BtnBackHomeInterface} from "../Interfaces/BtnBackHomeInterface";
 
-const BtnBackHome = (props : {type: 'button' | 'submit' | 'reset' | undefined, text: string}): ReactElement => {
+const BtnBackHome = (props: BtnBackHomeInterface): ReactElement => {
     const {text, type} = props;
 
     return (
