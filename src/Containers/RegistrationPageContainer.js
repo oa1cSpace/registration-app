@@ -1,4 +1,5 @@
-// import React from 'react';
+// import * as React from 'react';
+// import '../App.css';
 // import HeaderComponent from "../Components/HeaderComponent";
 // import EmaileComponent from "../Components/EmaileComponent";
 // import PasswordComponent from "../Components/PasswordComponent";
@@ -8,11 +9,12 @@
 // import {Link} from "react-router-dom";
 // import BtnLogin from "../Components/BtnLogin";
 // import {connect} from "react-redux";
-// import {setErrors, setField, setLoggedIn, clearForm} from "../redux/actions/registration";
+// import {setErrors, setField, setLoggedIn, clearForm} from "../redux/actions/registrationAction";
+// import {InputInterface} from "../Interfaces/InputInterface";
 //
 // class RegistrationPageContainer extends React.Component {
 //
-//     public fields: any = {
+//     fields: InputInterface = {
 //         username: '',
 //         surname: '',
 //         email: '',
@@ -21,20 +23,20 @@
 //         value: '',
 //     };
 //
-//     public props: any;
+//     // props: any;     !!!!!!!! NOOOOOOO 'ANY' !
 //
-//     public componentDidMount() {
+//
+//     componentDidMount() {
 //         this.props.clearForm(this.fields);
 //     };
 //
-//     private handleChange = ({target}: any) => {
+//     handleChange = ({target}:  React.ChangeEvent<HTMLTextAreaElement>)=> {
 //         this.props.setField(target)
 //     };
 //
-//     public submitUserRegistrationForm = (e: any) => {
+//     submitUserRegistrationForm = (e) => {
 //         e.preventDefault();
 //         const errors = this.validateForm();
-//
 //         if (Object.keys(errors).length === 0) {
 //             this.props.setLoggedIn(this.fields);
 //         } else {
@@ -42,41 +44,49 @@
 //         }
 //     };
 //
-//     public validateForm = () => {
+//     validateForm = (): object => {
 //         let fields = this.props.fields;
-//         let errors: { [key: string]: string } = {};
+//         let errors:object = {};
 //
-//         if (!fields["username"] || !fields["username"].match('^[A-Za-zА-Яа-яЁё]{2,60}')) {
-//             errors["username"] = "Не верно введено имя";
-//         }
+//         !fields["username"]
+//             ? errors["username"] = "Пожалуйста, введите имя."
+//             : !fields["username"].match('^[A-Za-zА-Яа-яЁё]{2,60}')
+//             ? errors["username"] = "Имя может содержать только буквы."
+//             : null;
 //
+//         !fields["surname"]
+//             ? errors["surname"] = "Пожалуйста, введите фамилию."
+//             : !fields["surname"].match('^[A-Za-zА-Яа-яЁё]{2,60}')
+//             ? errors["surname"] = "Фамилия может содержать только буквы."
+//             : null;
 //
-//         if (!fields["surname"] || !fields["surname"].match('^[A-Za-zА-Яа-яЁё]{2,60}')) {
-//             errors["surname"] = "Не верно введена фамилия";
-//         }
+//         !fields["email"]
+//             ? errors["email"] = "Пожалуйста, введите e-mail."
+//             : !fields["email"].match('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')
+//             ? errors["email"] = "Напишите правильный e-mail."
+//             : null;
 //
-//         if (!fields["email"] || !fields["email"].match('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')) {
-//             errors["email"] = "Не верно введён e-mail";
-//         }
+//         !fields["login"]
+//             ? errors["login"] = "Пожалуйста, введите логин."
+//             : !fields["login"].match('^[A-Za-zА-Яа-яЁё0-9]{4,60}')
+//             ? errors["login"] = "Напишите правильный логин."
+//             : null;
 //
-//
-//         if (!fields["login"] || !fields["login"].match('^[A-Za-zА-Яа-яЁё]{2,60}')) {
-//             errors["login"] = "Не верно введён логин";
-//         }
-//
-//         if (!fields["password"] || !fields["password"].match('^[A-Za-zА-Яа-яЁё]{2,60}')) {
-//             errors["password"] = "Не верно введён пароль";
-//         }
+//         !fields["password"]
+//             ? errors["password"] = "Пожалуйста, введите пароль."
+//             : !fields["password"].match('^[A-Za-zА-Яа-яЁё]{4,60}')
+//             ? errors["password"] = "Пароль слишком легкий."
+//             : null;
 //
 //         return errors;
 //     };
 //
-//     public resetForm = (e: any) => {
+//     resetForm = (e: ) => {
 //         this.props.clearForm(this.fields);
 //         e.preventDefault()
 //     };
 //
-//     public render() {
+//     render() {
 //         const {fields, errors} = this.props;
 //         return (
 //             <div className='registration-container'>
@@ -155,7 +165,7 @@
 //                         <BtnComponent
 //                             className='btn btn-outline-success btn_active'
 //                             text="Регистрация"
-//                             onClick={this.submitUserRegistrationForm}
+//                             onSubmit={this.submitUserRegistrationForm}
 //                         />
 //                     </div>
 //                 </form>
@@ -173,7 +183,7 @@
 //     }
 // }
 //
-// const mapStateToProps = (state: any) => ({...state.registration});
+// const mapStateToProps = (state: ) => ({...state.registration});
 //
 // export default connect(mapStateToProps, {
 //     setErrors,
@@ -181,6 +191,7 @@
 //     setLoggedIn,
 //     clearForm,
 // })(RegistrationPageContainer);
+
 
 
 import React from 'react';
@@ -194,7 +205,7 @@ import BtnComponent from "../Components/BtnComponent";
 import {Link} from "react-router-dom";
 import BtnLogin from "../Components/BtnLogin";
 import {connect} from "react-redux";
-import {setErrors, setField, setLoggedIn, clearForm} from "../redux/actions/registration";
+import {setErrors, setField, setLoggedIn, clearForm} from "../redux/actions/registrationAction";
 
 class RegistrationPageContainer extends React.Component {
 

@@ -299,7 +299,7 @@ import PasswordComponent from "../Components/PasswordComponent";
 import BtnBackHome from "../Components/BtnBackHome";
 import BtnComponent from "../Components/BtnComponent";
 import {connect} from "react-redux";
-import {clearForm, setErrors, setField, setLoggedIn} from "../redux/actions/login";
+import {clearForm, setErrors, setField, setLoggedIn} from "../redux/actions/loginAction";
 
 class LoginPageContainer extends React.Component {
     fields = {

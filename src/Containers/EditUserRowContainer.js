@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from "react-redux";
-import {addUsersData, editUser} from "../redux/actions/row";
+import {addUsersData, editUser} from "../redux/actions/rowAction";
 import {generateId} from "../Functions/RandomFunctions";
 import {usersRawSelector} from "../selectors/userSelector";
 

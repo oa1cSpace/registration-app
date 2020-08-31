@@ -3,10 +3,11 @@ import {
     LOGIN_SET_ERRORS,
     LOGIN_SET_FIELD,
     LOGIN_SET_LOGGED_IN,
-    LOGIN_CLEAR_FORM
-} from "../actions/login";
+    LOGIN_CLEAR_FORM,
+    LoginAction
+} from "../actions/loginAction";
 
-const errors = (state = {}, action) => {
+const errors = (state: object = {}, action: LoginAction): object => {
     switch (action.type) {
         case LOGIN_SET_ERRORS:
             return action.errors;
@@ -19,7 +20,7 @@ const errors = (state = {}, action) => {
     }
 };
 
-const fields = (state = {}, action) => {
+const fields = (state: object = {}, action: LoginAction): object => {
     switch (action.type) {
         case LOGIN_SET_FIELD:
             return {...state, [action.field.name]: action.field.value};
@@ -32,7 +33,7 @@ const fields = (state = {}, action) => {
     }
 }
 
-const isLogged = (state = false, action) => {
+const isLogged = (state: boolean = false, action: LoginAction): boolean => {
     switch (action.type) {
         case LOGIN_SET_LOGGED_IN:
             return true;
@@ -44,7 +45,6 @@ const isLogged = (state = false, action) => {
             return state;
     }
 }
-
 
 export const loginReducer = combineReducers({
     errors,

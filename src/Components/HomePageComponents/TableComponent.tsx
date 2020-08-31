@@ -7,7 +7,7 @@ import {
     updatePage,
     addTextInInput,
     addUsersData
-} from "../../redux/actions/row";
+} from "../../redux/actions/rowAction";
 import {NavLink} from "react-router-dom";
 import {
     currentPageSelector,

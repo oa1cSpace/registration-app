@@ -5,7 +5,7 @@ import RegistrationPageContainer from "./Containers/RegistrationPageContainer";
 import LoginPageContainer from "./Containers/LoginPageContainer";
 import EditUsersRowContainer from "./Containers/EditUserRowContainer";
 import {connect} from "react-redux";
-import {addUsersData} from "./redux/actions/row";
+import {addUsersData} from "./redux/actions/rowAction";
 import {generateData} from "./helpers/users";
 
 const App: React.FC <any> = ({addUsersData}) => {

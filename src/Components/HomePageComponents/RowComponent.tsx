@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {NavLink} from "react-router-dom";
 import {connect} from "react-redux";
-import {editUser} from "../../redux/actions/row";
+import {editUser} from "../../redux/actions/rowAction";
 import {usersRawSelector} from "../../selectors/userSelector";
 import { ReactElement} from "react";
 import {RowComponentInterface} from "../../Interfaces/RowComponentInterface";

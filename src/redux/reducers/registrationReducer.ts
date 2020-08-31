@@ -3,10 +3,11 @@ import {
     REGISTRATION_SET_ERRORS,
     REGISTRATION_SET_FIELD,
     REGISTRATION_SET_LOGGED_IN,
-    REGISTRATION_CLEAR_FORM
-} from "../actions/registration";
+    REGISTRATION_CLEAR_FORM,
+    RegistrationAction
+} from "../actions/registrationAction";
 
-const errors = (state = {}, action) => {
+const errors = (state:object = {}, action: RegistrationAction): object => {
     switch (action.type) {
         case REGISTRATION_SET_ERRORS:
             return action.errors;
@@ -19,7 +20,7 @@ const errors = (state = {}, action) => {
     }
 };
 
-const fields = (state = {}, action) => {
+const fields = (state:object = {}, action: RegistrationAction): object => {
     switch (action.type) {
         case REGISTRATION_SET_FIELD:
             return {...state, [action.field.name]: action.field.value};
@@ -32,7 +33,7 @@ const fields = (state = {}, action) => {
     }
 }
 
-const isLogged = (state = false, action) => {
+const isLogged = (state:boolean = false, action: RegistrationAction):boolean => {
     switch (action.type) {
         case REGISTRATION_SET_LOGGED_IN:
             return true;

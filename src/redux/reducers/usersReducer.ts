@@ -5,24 +5,27 @@ import {
     UPDATE_PAGE,
     EDIT_USER_ROW,
     GET_TEXT,
-} from "../actions/row";
+    RowAction,
+} from "../actions/rowAction";
 
-
-const rows = (state = [], action) => {
+const rows = (state: Array<string> = [], action: RowAction): Array<string> => {
     switch (action.type) {
         case GENERATE_DATA:
         case EDIT_USER_ROW:
-            return [...action.data || []].map((item, index) => {
+
+            // @ts-ignore
+            return [...(action.data || [])].map((item, index: number) => {
                 item.idx = index;
                 return item;
             });
+
         default:
             return state;
     }
 };
 
 
-const page = (state = 1, action) => {
+const page = (state: number = 1, action: RowAction): number => {
     switch (action.type) {
         case UPDATE_PAGE:
             return action.page;
@@ -33,7 +36,7 @@ const page = (state = 1, action) => {
     }
 };
 
-const filterText = (state = '', action)=>{
+const filterText = (state: string = '', action: RowAction): string => {
     switch (action.type) {
         case GET_TEXT:
             return action.text;
